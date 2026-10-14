@@ -3,289 +3,221 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PicoCloud — Enterprise Cloud & AI Infrastructure (Interactive Preview)</title>
+  <title>PicoCloud — Enterprise Cloud & AI Lead Portal</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@5/dist/email.min.js"></script>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col justify-between">
-
-  <!-- Header & Navigation Switcher -->
+<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col">
   <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur border-b border-slate-800">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <div class="flex items-center space-x-3">
+      <a href="#top" class="flex items-center space-x-3" aria-label="PicoCloud home">
         <div class="w-10 h-10 rounded-xl bg-cyan-500 flex items-center justify-center font-bold text-slate-950 text-xl">PC</div>
         <span class="text-xl font-extrabold tracking-wider text-white">PicoCloud</span>
-      </div>
-      <nav class="flex items-center space-x-6 text-sm font-medium">
-        <button onclick="switchView('landing')" id="nav-landing" class="text-cyan-400 hover:text-cyan-300 transition">Lead Website</button>
-        <button onclick="switchView('dashboard')" id="nav-dashboard" class="text-slate-400 hover:text-white transition bg-slate-900 border border-slate-800 px-4 py-2 rounded-xl">Sales Dashboard ↗</button>
-      </nav>
+      </a>
+      <a href="#lead-form" class="text-sm font-semibold text-slate-950 bg-cyan-500 hover:bg-cyan-400 px-4 py-2 rounded-xl transition">Request access</a>
     </div>
   </header>
 
-  <!-- MAIN VIEW CONTAINER -->
-  <main class="flex-grow">
+  <main id="top" class="flex-grow">
+    <section class="relative py-20 overflow-hidden border-b border-slate-900 text-center px-6">
+      <span class="inline-block py-1 px-3 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-semibold uppercase tracking-widest mb-6 border border-cyan-500/20">No database • Email delivery</span>
+      <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white mb-6 max-w-4xl mx-auto leading-tight">
+        High-Performance Cloud & AI <span class="text-cyan-400">Built for Scale</span>
+      </h1>
+      <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10">
+        Deploy cloud infrastructure for compute, container workloads, and AI projects. Tell our team what your business needs.
+      </p>
+      <a href="#lead-form" class="inline-block bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-8 py-4 rounded-xl transition shadow-lg shadow-cyan-500/20">Configure & Request Access</a>
+    </section>
 
-    <!-- VIEW 1: LANDING & LEAD FORM -->
-    <div id="view-landing">
-      <!-- Hero Section -->
-      <section class="relative py-20 overflow-hidden border-b border-slate-900 text-center px-6">
-        <span class="inline-block py-1 px-3 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-semibold uppercase tracking-widest mb-6 border border-cyan-500/20">Next-Gen Enterprise Infrastructure</span>
-        <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white mb-6 leading-tight max-w-4xl mx-auto">
-          High-Performance Cloud & AI <span class="text-cyan-400">Built for Scale</span>
-        </h1>
-        <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10">
-          Deploy elastic cloud servers, low-latency container clusters, and dedicated AI model training pipelines with enterprise-grade security and predictable pricing.
-        </p>
-        <div class="flex justify-center gap-4">
-          <a href="#lead-form" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-8 py-4 rounded-xl transition shadow-lg shadow-cyan-500/20">Configure & Request Access</a>
+    <section class="py-20 max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-white mb-4">Core Product Categories</h2>
+        <p class="text-slate-400">Select the infrastructure category that best matches your workload requirements.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-8 hover:border-cyan-500/50 transition">
+          <div class="w-12 h-12 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-xl mb-6">⚡</div>
+          <h3 class="text-xl font-bold text-white mb-3">Elastic Compute</h3>
+          <p class="text-slate-400 text-sm">Scalable virtual machines for application hosting, business systems, and general compute workloads. Confirm available configurations with the PicoCloud team.</p>
         </div>
-      </section>
-
-      <!-- Product Categories -->
-      <section class="py-20 max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl font-bold text-white mb-4">Core Product Categories</h2>
-          <p class="text-slate-400">Select the right infrastructure tier tailored for your workload requirements.</p>
+        <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-8 hover:border-cyan-500/50 transition">
+          <div class="w-12 h-12 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-xl mb-6">🤖</div>
+          <h3 class="text-xl font-bold text-white mb-3">AI & GPU Workloads</h3>
+          <p class="text-slate-400 text-sm">Share your model training, inference, or GPU compute requirements so the team can evaluate fit and availability.</p>
         </div>
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-8 hover:border-cyan-500/50 transition">
-            <div class="w-12 h-12 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-xl mb-6">⚡</div>
-            <h3 class="text-xl font-bold text-white mb-3">Elastic Compute Engine</h3>
-            <p class="text-slate-400 text-sm mb-6">Scalable virtual machines powered by high-frequency AMD EPYC & Intel Xeon processors with NVMe storage.</p>
-          </div>
-          <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-8 hover:border-cyan-500/50 transition">
-            <div class="w-12 h-12 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-xl mb-6">🤖</div>
-            <h3 class="text-xl font-bold text-white mb-3">AI & GPU Acceleration Pods</h3>
-            <p class="text-slate-400 text-sm mb-6">Dedicated NVIDIA H100/A100 clusters designed for high-throughput LLM training and real-time inference.</p>
-          </div>
-          <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-8 hover:border-cyan-500/50 transition">
-            <div class="w-12 h-12 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-xl mb-6">🌐</div>
-            <h3 class="text-xl font-bold text-white mb-3">Global Kubernetes (GKE+)</h3>
-            <p class="text-slate-400 text-sm mb-6">Fully managed Kubernetes orchestration with automated multi-region failover and edge load balancing.</p>
-          </div>
+        <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-8 hover:border-cyan-500/50 transition">
+          <div class="w-12 h-12 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-xl mb-6">🌐</div>
+          <h3 class="text-xl font-bold text-white mb-3">Container & Kubernetes</h3>
+          <p class="text-slate-400 text-sm">Discuss container orchestration, deployment, availability, and scaling requirements with the PicoCloud team.</p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Lead Capture Form Section -->
-      <section id="lead-form" class="py-20 bg-slate-900/30 border-t border-slate-900">
-        <div class="max-w-3xl mx-auto px-6">
-          <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 md:p-12 shadow-2xl">
-            <div class="text-center mb-10">
-              <h2 class="text-2xl md:text-3xl font-bold text-white mb-2">Request Product Access & Consultation</h2>
-              <p class="text-slate-400 text-sm">Fill out your requirements below. Our enterprise solutions team will reach out within 24 hours.</p>
-            </div>
+    <section id="lead-form" class="py-20 bg-slate-900/30 border-t border-slate-900">
+      <div class="max-w-3xl mx-auto px-6">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 md:p-12 shadow-2xl">
+          <div class="text-center mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-2">Request Product Access</h2>
+            <p class="text-slate-400 text-sm">Your request will be emailed to <span class="text-cyan-400 font-semibold">waliulnohan@gmail.com</span>.</p>
+            <p class="text-slate-500 text-xs mt-2">This website does not save submissions in a database or in your browser.</p>
+          </div>
 
-            <div id="success-alert" class="hidden mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm text-center font-medium">
-              ✓ Lead successfully captured and synced to Google Sheets storage simulation!
-            </div>
+          <div id="success-alert" role="status" aria-live="polite" class="hidden mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm text-center font-medium">
+            ✓ Your request was sent by email. Thank you.
+          </div>
+          <div id="error-alert" role="alert" aria-live="assertive" class="hidden mb-6 p-4 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-400 text-sm text-center font-medium"></div>
 
-            <form id="leadCaptureForm" class="space-y-6">
-              <div class="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Full Name *</label>
-                  <input type="text" id="fullName" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-500" placeholder="Jane Doe">
-                </div>
-                <div>
-                  <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Work Email *</label>
-                  <input type="email" id="email" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-500" placeholder="jane@company.com">
-                </div>
-              </div>
-
-              <div class="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Company Name *</label>
-                  <input type="text" id="company" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-500" placeholder="Acme Corp">
-                </div>
-                <div>
-                  <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Product Category *</label>
-                  <select id="productCategory" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-500">
-                    <option value="" disabled selected>Select product category</option>
-                    <option value="Elastic Compute Engine">Elastic Compute Engine</option>
-                    <option value="AI & GPU Acceleration Pods">AI & GPU Acceleration Pods</option>
-                    <option value="Global Kubernetes (GKE+)">Global Kubernetes (GKE+)</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Expected Deployment Scale *</label>
-                  <select id="deploymentScale" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-500">
-                    <option value="" disabled selected>Select scale</option>
-                    <option value="Pilot / PoC (1-5 Nodes)">Pilot / PoC (1-5 Nodes)</option>
-                    <option value="Growth (6-50 Nodes)">Growth (6-50 Nodes)</option>
-                    <option value="Enterprise (50+ Nodes)">Enterprise (50+ Nodes)</option>
-                  </select>
-                </div>
-                <div>
-                  <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Monthly Budget Range *</label>
-                  <select id="budgetRange" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-500">
-                    <option value="" disabled selected>Select budget</option>
-                    <option value="$1,000 - $5,000 / mo">$1,000 - $5,000 / mo</option>
-                    <option value="$5,000 - $20,000 / mo">$5,000 - $20,000 / mo</option>
-                    <option value="$20,000+ / mo">$20,000+ / mo</option>
-                  </select>
-                </div>
-              </div>
-
+          <form id="leadCaptureForm" class="space-y-6">
+            <div class="grid md:grid-cols-2 gap-6">
               <div>
-                <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Use Case & Architecture Notes</label>
-                <textarea id="useCase" rows="3" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-500" placeholder="Briefly describe your workload requirements..."></textarea>
+                <label for="fullName" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Full Name *</label>
+                <input type="text" id="fullName" name="fullName" autocomplete="name" required maxlength="120" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-500" placeholder="Jane Doe">
               </div>
-
-              <!-- Consent & Privacy Handling -->
-              <div class="flex items-start space-x-3 pt-2">
-                <input type="checkbox" id="consent" required class="mt-1 w-4 h-4 rounded bg-slate-950 border-slate-800 text-cyan-500 focus:ring-0">
-                <label for="consent" class="text-xs text-slate-400 leading-relaxed">
-                  I consent to PicoCloud processing my data in accordance with the Privacy Policy to evaluate my infrastructure requirements and receive product communications.
-                </label>
+              <div>
+                <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Work Email *</label>
+                <input type="email" id="email" name="email" autocomplete="email" required maxlength="254" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-500" placeholder="jane@company.com">
               </div>
+            </div>
 
-              <button type="submit" class="w-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold py-4 rounded-xl transition shadow-lg shadow-cyan-500/20">
-                Submit Lead Request
-              </button>
-            </form>
-          </div>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label for="company" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Company Name *</label>
+                <input type="text" id="company" name="company" autocomplete="organization" required maxlength="160" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-500" placeholder="Acme Corp">
+              </div>
+              <div>
+                <label for="productCategory" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Product Category *</label>
+                <select id="productCategory" name="productCategory" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-500">
+                  <option value="" disabled selected>Select category</option>
+                  <option value="Elastic Compute">Elastic Compute</option>
+                  <option value="AI & GPU Workloads">AI & GPU Workloads</option>
+                  <option value="Container & Kubernetes">Container & Kubernetes</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label for="deploymentScale" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Deployment Scale *</label>
+                <select id="deploymentScale" name="deploymentScale" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-500">
+                  <option value="" disabled selected>Select scale</option>
+                  <option value="Pilot / PoC (1-5 Nodes)">Pilot / PoC (1-5 Nodes)</option>
+                  <option value="Growth (6-50 Nodes)">Growth (6-50 Nodes)</option>
+                  <option value="Enterprise (50+ Nodes)">Enterprise (50+ Nodes)</option>
+                </select>
+              </div>
+              <div>
+                <label for="budgetRange" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Monthly Budget Range *</label>
+                <select id="budgetRange" name="budgetRange" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-500">
+                  <option value="" disabled selected>Select budget</option>
+                  <option value="$1,000 - $5,000 / mo">$1,000 - $5,000 / mo</option>
+                  <option value="$5,000 - $20,000 / mo">$5,000 - $20,000 / mo</option>
+                  <option value="$20,000+ / mo">$20,000+ / mo</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="useCase" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Use Case & Architecture Notes</label>
+              <textarea id="useCase" name="useCase" rows="3" maxlength="5000" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-cyan-500" placeholder="Briefly describe workload requirements..."></textarea>
+            </div>
+
+            <div class="flex items-start space-x-3 pt-2">
+              <input type="checkbox" id="consent" name="consent" required class="mt-1 w-4 h-4 rounded bg-slate-950 border-slate-800 text-cyan-500 focus:ring-0">
+              <label for="consent" class="text-xs text-slate-400 leading-relaxed">I consent to PicoCloud using the details I submit to evaluate my infrastructure requirements and contact me about this request.</label>
+            </div>
+
+            <button type="submit" id="submitBtn" class="w-full bg-cyan-500 hover:bg-cyan-400 disabled:opacity-60 disabled:cursor-not-allowed text-slate-950 font-bold py-4 rounded-xl transition shadow-lg shadow-cyan-500/20">
+              Submit Lead Request
+            </button>
+            <p class="text-xs text-slate-500 text-center">Email delivery requires a configured EmailJS account. No database or browser storage is used by this page.</p>
+          </form>
         </div>
-      </section>
-    </div>
-
-    <!-- VIEW 2: SALES & ADMIN DASHBOARD -->
-    <div id="view-dashboard" class="hidden max-w-7xl mx-auto px-6 py-10">
-      <div class="bg-slate-900 border border-slate-800 p-4 rounded-2xl mb-8 flex justify-between items-center text-xs text-slate-400">
-        <div>Storage: <span class="text-cyan-400 font-semibold">Google Sheets Simulation (LocalStorage)</span></div>
-        <div>CRM Adapter: <span class="text-amber-400 font-semibold">Not Yet Identified (Queued)</span></div>
       </div>
-
-      <div class="flex justify-between items-center mb-6">
-        <div>
-          <h1 class="text-2xl font-bold text-white">Incoming Customer Leads</h1>
-          <p class="text-slate-400 text-sm">Leads submitted from the PicoCloud lead-generation website.</p>
-        </div>
-        <button onclick="clearLeads()" class="bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/20 text-rose-400 text-xs font-semibold px-4 py-2.5 rounded-xl transition">
-          Clear Demo Leads
-        </button>
-      </div>
-
-      <div class="bg-slate-900/40 border border-slate-800 rounded-2xl overflow-hidden shadow-xl">
-        <div class="overflow-x-auto">
-          <table class="w-full text-left text-sm text-slate-300">
-            <thead class="bg-slate-900 text-slate-400 text-xs uppercase tracking-wider border-b border-slate-800">
-              <tr>
-                <th class="px-6 py-4">Timestamp</th>
-                <th class="px-6 py-4">Prospect</th>
-                <th class="px-6 py-4">Company</th>
-                <th class="px-6 py-4">Product Category</th>
-                <th class="px-6 py-4">Scale / Budget</th>
-                <th class="px-6 py-4">Use Case</th>
-                <th class="px-6 py-4">CRM Sync Status</th>
-              </tr>
-            </thead>
-            <tbody id="dashboardTableBody" class="divide-y divide-slate-800/60">
-              <!-- Dynamically populated -->
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-
+    </section>
   </main>
 
   <footer class="border-t border-slate-900 py-8 text-center text-xs text-slate-500">
-    <p>&copy; 2026 PicoCloud Inc. All rights reserved. Interactive Preview Engine.</p>
+    <p>&copy; 2026 PicoCloud. All rights reserved.</p>
   </footer>
 
   <script>
-    // View Switcher logic
-    function switchView(view) {
-      const landing = document.getElementById('view-landing');
-      const dashboard = document.getElementById('view-dashboard');
-      const navLanding = document.getElementById('nav-landing');
-      const navDashboard = document.getElementById('nav-dashboard');
+    // Fill these three values from your EmailJS dashboard.
+    const EMAILJS_PUBLIC_KEY = "ENWJB-kMRVpBEr7a3";
+    const EMAILJS_SERVICE_ID = "service_d3a5dmw";
+    const EMAILJS_TEMPLATE_ID = "template_5mie39i";
+    const LEAD_RECEIVER_EMAIL = "waliulnohan@gmail.com";
 
-      if (view === 'dashboard') {
-        landing.classList.add('hidden');
-        dashboard.classList.remove('hidden');
-        navDashboard.className = "text-cyan-400 font-semibold bg-cyan-500/10 border border-cyan-500/20 px-4 py-2 rounded-xl";
-        navLanding.className = "text-slate-400 hover:text-white transition";
-        loadDashboardLeads();
-      } else {
-        dashboard.classList.add('hidden');
-        landing.classList.remove('hidden');
-        navLanding.className = "text-cyan-400 font-semibold";
-        navDashboard.className = "text-slate-400 hover:text-white transition bg-slate-900 border border-slate-800 px-4 py-2 rounded-xl";
-      }
+    const form = document.getElementById("leadCaptureForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const successAlert = document.getElementById("success-alert");
+    const errorAlert = document.getElementById("error-alert");
+
+    function showError(message) {
+      errorAlert.textContent = message;
+      errorAlert.classList.remove("hidden");
+      successAlert.classList.add("hidden");
     }
 
-    // Handle Form Submission
-    document.getElementById('leadCaptureForm').addEventListener('submit', (e) => {
-      e.preventDefault();
+    function hideAlerts() {
+      errorAlert.classList.add("hidden");
+      successAlert.classList.add("hidden");
+    }
 
-      const newLead = {
-        timestamp: new Date().toISOString(),
-        fullName: document.getElementById('fullName').value,
-        email: document.getElementById('email').value,
-        company: document.getElementById('company').value,
-        productCategory: document.getElementById('productCategory').value,
-        deploymentScale: document.getElementById('deploymentScale').value,
-        budgetRange: document.getElementById('budgetRange').value,
-        useCase: document.getElementById('useCase').value || 'N/A',
-        consent: 'Granted',
-        crmSync: 'Queued (No CRM identified)'
-      };
+    const emailJsConfigured =
+      EMAILJS_PUBLIC_KEY !== "YOUR_PUBLIC_KEY" &&
+      EMAILJS_SERVICE_ID !== "YOUR_SERVICE_ID" &&
+      EMAILJS_TEMPLATE_ID !== "YOUR_TEMPLATE_ID";
 
-      let leads = JSON.parse(localStorage.getItem('picocloud_leads') || '[]');
-      leads.unshift(newLead);
-      localStorage.setItem('picocloud_leads', JSON.stringify(leads));
+    if (emailJsConfigured && window.emailjs) {
+      emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+    }
 
-      const successAlert = document.getElementById('success-alert');
-      successAlert.classList.remove('hidden');
-      document.getElementById('leadCaptureForm').reset();
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      hideAlerts();
 
-      setTimeout(() => {
-        successAlert.classList.add('hidden');
-      }, 4000);
-    });
+      if (!form.reportValidity()) return;
 
-    // Load Leads into Dashboard Table
-    function loadDashboardLeads() {
-      const tbody = document.getElementById('dashboardTableBody');
-      let leads = JSON.parse(localStorage.getItem('picocloud_leads') || '[]');
-
-      if (leads.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="7" class="px-6 py-8 text-center text-slate-500">No leads recorded yet. Submit a request on the landing page!</td></tr>`;
+      if (!emailJsConfigured || !window.emailjs) {
+        showError("Email delivery is not configured yet. Add your EmailJS public key, service ID, and template ID in this file, then try again.");
         return;
       }
 
-      tbody.innerHTML = leads.map(lead => `
-        <tr class="hover:bg-slate-900/50 transition">
-          <td class="px-6 py-4 text-xs text-slate-400 whitespace-nowrap">${new Date(lead.timestamp).toLocaleString()}</td>
-          <td class="px-6 py-4">
-            <div class="font-bold text-white">${lead.fullName}</div>
-            <div class="text-xs text-cyan-400">${lead.email}</div>
-          </td>
-          <td class="px-6 py-4 font-medium text-slate-200">${lead.company}</td>
-          <td class="px-6 py-4"><span class="bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 px-2.5 py-1 rounded-full text-xs">${lead.productCategory}</span></td>
-          <td class="px-6 py-4 text-xs">
-            <div>Scale: <span class="text-slate-200">${lead.deploymentScale}</span></div>
-            <div class="text-slate-400">Budget: ${lead.budgetRange}</div>
-          </td>
-          <td class="px-6 py-4 text-xs text-slate-400 max-w-xs truncate">${lead.useCase}</td>
-          <td class="px-6 py-4 whitespace-nowrap">
-            <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">
-              ${lead.crmSync}
-            </span>
-          </td>
-        </tr>
-      `).join('');
-    }
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending request...";
 
-    function clearLeads() {
-      if (confirm('Are you sure you want to clear all demo leads?')) {
-        localStorage.removeItem('picocloud_leads');
-        loadDashboardLeads();
+      const templateParams = {
+        fullName: document.getElementById("fullName").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        company: document.getElementById("company").value.trim(),
+        productCategory: document.getElementById("productCategory").value,
+        deploymentScale: document.getElementById("deploymentScale").value,
+        budgetRange: document.getElementById("budgetRange").value,
+        useCase: document.getElementById("useCase").value.trim() || "Not provided",
+        timestamp: new Date().toLocaleString(),
+        target_email: LEAD_RECEIVER_EMAIL
+      };
+
+      try {
+        await emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
+          templateParams,
+          { publicKey: EMAILJS_PUBLIC_KEY }
+        );
+
+        successAlert.classList.remove("hidden");
+        errorAlert.classList.add("hidden");
+        form.reset();
+      } catch (error) {
+        console.error("EmailJS delivery failed:", error);
+        showError("We could not send your request. Please try again later or contact waliulnohan@gmail.com directly.");
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit Lead Request";
       }
-    }
+    });
   </script>
 </body>
 </html>
